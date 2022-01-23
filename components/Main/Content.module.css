@@ -1,0 +1,11 @@
+.Main {
+  background: #000000;
+  list-style: none;
+  padding-right: 60px;
+  color: #4c4c4c;
+}
+
+.Main hr {
+  width: 98%;
+  margin: auto;
+}

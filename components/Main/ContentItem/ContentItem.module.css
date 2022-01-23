@@ -1,0 +1,24 @@
+.MainItem {
+  background: #000000;
+}
+
+.MainItem ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MainItem li {
+  padding-right: 40px;
+}
+
+.MainItem a:hover {
+  color: #ffffff !important;
+}
+
+.MainItem a {
+  color: #4c4c4c !important;
+  text-decoration: none;
+}

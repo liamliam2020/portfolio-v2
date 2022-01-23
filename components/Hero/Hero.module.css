@@ -1,0 +1,26 @@
+.Hero {
+  background: #000000;
+  color: white;
+  height: 600px;
+  flex-shrink: 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.Hero h2 {
+  font-weight: 500;
+  font-size: 62px;
+  line-height: 70px;
+}
+
+.icon {
+  text-align: center;
+}
+
+.Hero a {
+  color: white;
+}
+
+.Hero a:hover {
+  color: #ffff88;
+}

@@ -1,0 +1,65 @@
+.Footer {
+  width: 95%;
+  background: #000000;
+  color: white;
+  flex-shrink: 0;
+}
+
+.Footer a:hover {
+  color: #ffff88;
+}
+
+.FootMain {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.FootMain a {
+  text-decoration: underline;
+  color: white;
+}
+
+.FootSocial {
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.FootSocial a {
+  text-decoration: none;
+  color: white;
+}
+
+.FootSocial li {
+  display: inline-block;
+  padding: 10px 15px;
+  list-style: none;
+}
+
+.FootLegal {
+  font-size: 12px;
+  width: 100%;
+}
+
+.FootLegal ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px;
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
+
+.FootLegal li {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.FootLegal a {
+  text-decoration: none;
+  color: white;
+}
