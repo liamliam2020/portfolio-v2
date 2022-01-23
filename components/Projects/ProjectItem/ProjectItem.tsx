@@ -1,8 +1,16 @@
 import React from "react";
-import classes from "./ContentItem.module.css";
+import classes from "./ProjectItem.module.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-const ContentItem = (props) => (
+interface ProjectItemProps {
+  route: string;
+  title: string;
+  desc: string;
+  tech: string;
+}
+//TODO maybe this elemt should be a li and save me some styling in the future 
+
+const ProjectItem = (props: ProjectItemProps) => (
   <div className={classes.MainItem}>
     <a href={props.route}>
       <ul>
@@ -19,4 +27,4 @@ const ContentItem = (props) => (
   </div>
 );
 
-export default ContentItem;
+export default ProjectItem;

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import classes from "./Toolbar.module.css";
+import classes from "./Navigation.module.css";
 //import resumePDF from '../../../assets/B Liam Rethore Resume.pdf';
 
-const Toolbar = () => {
+const Navigation = () => {
   return (
     <header className={classes.header}>
       <Link href="/">https://bliamrethore.com</Link>
@@ -21,4 +21,4 @@ const Toolbar = () => {
   );
 };
 
-export default Toolbar;
+export default Navigation;

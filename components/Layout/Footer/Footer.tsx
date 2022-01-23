@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Footer.module.css";
 
-const Footer = (props) => (
+const Footer = () => (
   <footer className={styles.Footer} id="info">
     <section className={styles.FootMain}>
       <h2>
