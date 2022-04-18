@@ -1,0 +1,60 @@
+.gameContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border {
+  text-align: center;
+  width: 800px;
+  height: 900px;
+
+  outline: white 10px solid;
+  outline-offset: 10px;
+  border-radius: 10px;
+}
+
+.scoreBoard h1 {
+  color: red;
+  margin: 0;
+}
+
+.scoreBoard li {
+  color: white;
+}
+
+.gameInfo li {
+  color: white;
+}
+
+.digDug h2 {
+  text-align: center;
+  color: white;
+}
+
+.digDug h4 {
+  text-align: center;
+  color: white;
+}
+
+
+.digDug {
+  background-color: black;
+  height: 100%;
+}
+
+.digDug ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+}
+
+.digDug button {
+  position: absolute;
+  left: 720px;
+  bottom: 700px;
+}
+/* How to postion button on top */
+/* https://stackoverflow.com/questions/2941189/how-to-overlay-one-div-over-another-div */

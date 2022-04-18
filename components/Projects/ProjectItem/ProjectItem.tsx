@@ -1,30 +1,37 @@
 import React from "react";
 import classes from "./ProjectItem.module.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Link from "next/link";
 
 interface ProjectItemProps {
-  route: string;
   title: string;
-  desc: string;
-  tech: string;
+  description: string;
+  technologies: string;
+  route: string;
 }
-//TODO maybe this elemt should be a li and save me some styling in the future 
 
-const ProjectItem = (props: ProjectItemProps) => (
-  <div className={classes.MainItem}>
-    <a href={props.route}>
-      <ul>
-        <li>
-          <h2>{props.title}</h2>
-          <p>{props.desc}</p>
-          <p>{props.tech}</p>
-        </li>
-        <li>
-          <ArrowForwardIcon fontSize="large" />
-        </li>
-      </ul>
-    </a>
-  </div>
-);
+function ProjectItem(props: ProjectItemProps) {
+  const { title, description, technologies, route } = props;
+
+  return (
+    <li>
+      <div className={classes.MainItem}>
+        <Link href={route}>
+          <ul>
+            <li>
+              <h2>{title}</h2>
+              <p>{description}</p>
+              <p>{technologies}</p>
+            </li>
+            <li>
+              <ArrowForwardIcon fontSize="large" />
+            </li>
+          </ul>
+        </Link>
+      </div>
+      <hr />
+    </li>
+  );
+}
 
 export default ProjectItem;

@@ -14,11 +14,12 @@
   padding-right: 40px;
 }
 
-.MainItem a:hover {
+.MainItem ul:hover {
   color: #ffffff !important;
+  cursor: pointer;
 }
 
-.MainItem a {
+.MainItem ul {
   color: #4c4c4c !important;
   text-decoration: none;
 }

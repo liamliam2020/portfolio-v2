@@ -1,0 +1,66 @@
+.SortingVisualizer {
+  background: #000000;
+  color: white;
+  flex-shrink: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.SortingVisualizer h2 {
+  font-weight: 500;
+  font-size: 62px;
+  text-align: left;
+  text-align: center;
+}
+
+.Controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.Controls li {
+  list-style: none;
+}
+
+.Controls button {
+  background: #000000;
+  border-style: hidden;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.Controls button:disabled {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
+.Controls button:hover {
+  opacity: 25%;
+}
+
+.VisualArray {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.VisualArray div {
+  width: 4px;
+  background-color: #f3a33a;
+  display: inline-block;
+  margin: 0 1px;
+}
+
+.Slider {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  width: 75%;
+}
+

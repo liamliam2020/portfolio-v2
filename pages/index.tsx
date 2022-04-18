@@ -2,11 +2,22 @@ import Head from "next/head";
 import { Fragment } from "react";
 
 import Hero from "../components/Hero/Hero";
-import Toolbar from "../components/Layout/Navigation/Navigation";
 import Project from "../components/Projects/Project";
-import Footer from "../components/Layout/Footer/Footer";
+import { getAllProjects } from "../projects/project-content";
 
-function HomePage() {
+interface HomePageProps {
+  projects: {
+    id: string;
+    title: string;
+    description: string;
+    technologies: string;
+    route: string;
+  }[];
+}
+
+function HomePage(props: HomePageProps) {
+  //TODO optimzie for mobile
+  //TODO new favicon!
   return (
     <Fragment>
       <Head>
@@ -14,9 +25,20 @@ function HomePage() {
         <meta name="description" content="This is a placeholder for now"></meta>
       </Head>
       <Hero />
-      <Project />
+      <Project items={props.projects} />
     </Fragment>
   );
+}
+
+export async function getStaticProps() {
+  const featuredProjects = await getAllProjects();
+  //TODO tweak setting for reloads will be pretty infrequent if ever
+  return {
+    props: {
+      projects: featuredProjects,
+    },
+    revalidate: 3600,
+  };
 }
 
 export default HomePage;

@@ -6,8 +6,8 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 const Hero = () => (
   <div className={styles.Hero}>
     <h2>
-      Hi! I'm Liam a software engineer looking for new work. Check out some of
-      what I've done below. (Change Me)
+      Hi, I'm Liam a backend software engineer at General Motors! Check out some of 
+      what I've done.
     </h2>
     <div className={styles.icon}>
       <a href="/#projects">

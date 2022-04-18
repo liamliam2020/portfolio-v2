@@ -9,3 +9,7 @@
   width: 98%;
   margin: auto;
 }
+
+.Main li {
+display: block;
+}

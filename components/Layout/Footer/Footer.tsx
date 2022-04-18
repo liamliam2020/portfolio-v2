@@ -24,7 +24,7 @@ const Footer = () => (
         </li>
         <li>
           <a
-            href="https://www.linkedin.com/in/liamrethore/"
+            href="https://www.linkedin.com/in/bliamrethore/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -35,9 +35,9 @@ const Footer = () => (
     </section>
     <section className={styles.FootLegal}>
       <ul>
-        <li>Last Updated: 01.22.2022</li>
+        <li>Last Updated: 04.18.2022</li>
         <li>
-          <a href="\">Github Source Code</a>
+          <a href="https://github.com/liamliam2020/portfolio-v2">Github Source Code</a>
         </li>
         <li>&copy;2022. All Rights Reserved.</li>
       </ul>
