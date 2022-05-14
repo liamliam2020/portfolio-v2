@@ -1,4 +1,3 @@
-
 const canvasGridSize = 45 // not conviced i need this
 export const canvasWidth = 12 * canvasGridSize;
 export const canvasHeight = 18 * canvasGridSize;
@@ -46,7 +45,6 @@ export const initializeBoard = (ctx: CanvasRenderingContext2D, board: Array<Arra
       )
     }
   }
-
 }
 
 export const digBlocks = (ctx: CanvasRenderingContext2D, x: number, y: number, backgroundColor: string) => {

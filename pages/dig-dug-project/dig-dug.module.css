@@ -9,7 +9,6 @@
   text-align: center;
   width: 800px;
   height: 900px;
-
   outline: white 10px solid;
   outline-offset: 10px;
   border-radius: 10px;
@@ -38,7 +37,6 @@
   color: white;
 }
 
-
 .digDug {
   background-color: black;
   height: 100%;
@@ -51,10 +49,22 @@
   margin: 0;
 }
 
-.digDug button {
-  position: absolute;
-  left: 720px;
-  bottom: 700px;
+.gameBoard {
+  position: relative;
 }
-/* How to postion button on top */
-/* https://stackoverflow.com/questions/2941189/how-to-overlay-one-div-over-another-div */
+
+.gameOver {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  bottom: 30%;
+  top: 40%;
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 1.5px 1.5px 1px black;
+}
+
+.gameOver h2 {
+  margin-bottom: -15px;
+}
