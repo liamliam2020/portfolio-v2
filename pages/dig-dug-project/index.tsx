@@ -28,6 +28,8 @@ import { initializeEnemies, isDead } from "../../projects/dig-dug-game/Enemy";
 const Home: NextPage = () => {
   const taizoSize = 4;
   const minGameSpeed = 2;
+  const SKY_COLOR = "#92dff3";
+  const DIRT_COLOR = "#000000";
 
   // Canvas
   const canvasRef = useRef<any>();
@@ -50,7 +52,7 @@ const Home: NextPage = () => {
     pump: {
       length: 0,
     },
-    apperance: "static/images/player_right.png",
+    apperance: "static/images/taizo_right.png",
   });
   const [enemies, setEnemies] = useState<Array<Enemy>>(initializeEnemies());
 
@@ -97,7 +99,7 @@ const Home: NextPage = () => {
     } else {
       let currentBoard = _.cloneDeep(gameBoard);
       let currentEnemies = _.cloneDeep(enemies);
-      let backgroundColor = "#000000";
+      let backgroundColor = DIRT_COLOR;
 
       // move to next level
       if (enemies.filter(enemy => enemy.isDead === true).length == enemies.length) {
@@ -166,9 +168,9 @@ const Home: NextPage = () => {
             );
 
             if (currentBoard[prevLocationY][prevLocationX] === 0) {
-              backgroundColor = "#0000FF";
+              backgroundColor = SKY_COLOR;
             } else {
-              backgroundColor = "#000000";
+              backgroundColor = DIRT_COLOR;
             }
 
             digBlocks(ctx, prevLocationX, prevLocationY, backgroundColor);
@@ -184,7 +186,7 @@ const Home: NextPage = () => {
       const ctx: any = canvas?.getContext("2d");
 
       let currentBoard = _.cloneDeep(gameBoard);
-      let backgroundColor = "#000000";
+      let backgroundColor = DIRT_COLOR;
       let prevLocationX = taizoHori.location.x;
       let prevLocationY = taizoHori.location.y;
       let x = taizoHori.location.x;
@@ -194,25 +196,25 @@ const Home: NextPage = () => {
         case Direction.North:
           prevLocationY++;
           if (prevLocationY >= 0 && currentBoard[prevLocationY][prevLocationX] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           break;
         case Direction.South:
           prevLocationY--;
           if (prevLocationY >= 0 && currentBoard[prevLocationY][prevLocationX] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           break;
         case Direction.East:
           prevLocationX--;
           if (prevLocationX >= 0 && currentBoard[prevLocationY][prevLocationX] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           break;
         case Direction.West:
           prevLocationX++;
           if (prevLocationX >= 0 && currentBoard[prevLocationY][prevLocationX] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           break;
       }
@@ -223,6 +225,7 @@ const Home: NextPage = () => {
 
       if (currentBoard[y][x] !== 0 && currentBoard[y][x] !== 1) {
         currentBoard[y][x] = 1;
+        digBlocks(ctx, x, y, DIRT_COLOR);
         setGameBoard(currentBoard);
       }
 
@@ -246,21 +249,24 @@ const Home: NextPage = () => {
           drawInfaltor(
             ctx,
             currentPlayer.location.x,
-            currentPlayer.location.y - currentPlayer.pump.length
+            currentPlayer.location.y - currentPlayer.pump.length,
+            "static/images/beam_vertical.png"
           );
           break;
         case Direction.South:
           drawInfaltor(
             ctx,
             currentPlayer.location.x,
-            currentPlayer.location.y + currentPlayer.pump.length
+            currentPlayer.location.y + currentPlayer.pump.length,
+            "static/images/beam_vertical.png"
           );
           break;
         case Direction.East:
           drawInfaltor(
             ctx,
             currentPlayer.location.x + currentPlayer.pump.length,
-            currentPlayer.location.y
+            currentPlayer.location.y,
+            "static/images/beam_horizontal.png"
           );
 
           break;
@@ -268,7 +274,8 @@ const Home: NextPage = () => {
           drawInfaltor(
             ctx,
             currentPlayer.location.x - currentPlayer.pump.length,
-            currentPlayer.location.y
+            currentPlayer.location.y,
+            "static/images/beam_horizontal.png"
           );
           break;
       }
@@ -283,7 +290,7 @@ const Home: NextPage = () => {
   ) => {
     
     while (length != 0) {
-      let backgroundColor = "#000000";
+      let backgroundColor = DIRT_COLOR;
       let newY = taizoLocation.y;
       let newX = taizoLocation.x;
 
@@ -292,7 +299,7 @@ const Home: NextPage = () => {
           newY = taizoLocation.y - length;
 
           if (newY >= 0 && gameBoard[newY][taizoLocation.x] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           digBlocks(
             ctx,
@@ -305,7 +312,7 @@ const Home: NextPage = () => {
           newY = taizoLocation.y + length;
         
           if (newY >= 0 && gameBoard[newY][taizoLocation.x] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           digBlocks(
             ctx,
@@ -318,7 +325,7 @@ const Home: NextPage = () => {
           newX = taizoLocation.x + length;
           
           if (newX >= 0 && gameBoard[taizoLocation.y][newX] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           digBlocks(
             ctx,
@@ -331,7 +338,7 @@ const Home: NextPage = () => {
           newX = taizoLocation.x - length;
           
           if (newX >= 0 && gameBoard[newY][taizoLocation.x] === 0) {
-            backgroundColor = "#0000FF";
+            backgroundColor = SKY_COLOR;
           }
           digBlocks(
             ctx,
@@ -379,28 +386,28 @@ const Home: NextPage = () => {
           if (currentPlayer.location.x + 1 < gameBoard[0].length) {
             currentPlayer.location.x = currentPlayer.location.x + 1;
             currentPlayer.direction = Direction.East;
-            currentPlayer.apperance = "static/images/player_right.png";
+            currentPlayer.apperance = "static/images/taizo_right.png";
           }
           break;
         case "ArrowLeft":
           if (currentPlayer.location.x - 1 >= 0) {
             currentPlayer.location.x = currentPlayer.location.x - 1;
             currentPlayer.direction = Direction.West;
-            currentPlayer.apperance = "static/images/player_left.png";
+            currentPlayer.apperance = "static/images/taizo_left.png";
           }
           break;
         case "ArrowDown":
           if (currentPlayer.location.y + 1 < gameBoard.length) {
             currentPlayer.location.y = currentPlayer.location.y + 1;
             currentPlayer.direction = Direction.South;
-            currentPlayer.apperance = "static/images/player_down.png";
+            currentPlayer.apperance = "static/images/taizo_down.png";
           }
           break;
         case "ArrowUp":
           if (currentPlayer.location.y - 1 >= 0) {
             currentPlayer.location.y = currentPlayer.location.y - 1;
             currentPlayer.direction = Direction.North;
-            currentPlayer.apperance = "static/images/player_up.png";
+            currentPlayer.apperance = "static/images/taizo_up.png";
           }
           break;
         case " ":
@@ -566,7 +573,6 @@ const Home: NextPage = () => {
         </div>
       </div>
       <h4>Use arrow keys to move and space to attack.</h4>
-      <h4>Game is still a work in progress last update: 5-10-2022</h4>
     </body>
   );
 };
@@ -587,7 +593,7 @@ export default Home;
 // https://www.spriters-resource.com/search/?q=dig+dug <- spriters
 
 //TODO
-// 4. Update graphics to look more like dig dug
+// 1. draw beam horizontal
 
 //NOTES
 // 1. Keeping the enemies to have like a max number (5 or so) will be way easier

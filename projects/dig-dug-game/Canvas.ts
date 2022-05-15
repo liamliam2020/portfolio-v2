@@ -1,4 +1,6 @@
 const canvasGridSize = 45 // not conviced i need this
+const SKY_COLOR = "#92dff3";
+const DIRT_COLOR = "#000000";
 export const canvasWidth = 12 * canvasGridSize;
 export const canvasHeight = 18 * canvasGridSize;
 
@@ -18,10 +20,10 @@ export const initializeBoard = (ctx: CanvasRenderingContext2D, board: Array<Arra
   for (let x = 0; board[0].length > x; x++) {
     for (let y = 0; board.length > y; y++) {
       if (board[y][x] == 0) {
-        ctx.fillStyle = '#0000FF'   
+        ctx.fillStyle = SKY_COLOR   
       } else if (board[y][x] == 1) {
         
-        ctx.fillStyle = '#000000'   
+        ctx.fillStyle = DIRT_COLOR   
       } else if (board[y][x] == 2) {
         
         ctx.fillStyle = '#FFFF00'   
@@ -72,10 +74,10 @@ export const drawSprit = (ctx: CanvasRenderingContext2D, x: number, y: number, s
   }
 }
 
-export const drawInfaltor = (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+export const drawInfaltor = (ctx: CanvasRenderingContext2D, x: number, y: number, apperance: string) => {
 
   let image = new Image();
-  image.src = "static/images/wiggle.png";
+  image.src = apperance;
   
   image.onload = () => {
     ctx.drawImage(image, x * canvasGridSize, y * canvasGridSize, canvasGridSize, canvasGridSize)

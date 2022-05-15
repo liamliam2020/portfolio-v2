@@ -9,7 +9,7 @@ export const initializeEnemies = () => {
       y: 5,
     },
     isDead: false,
-    apperance: "static/images/enemy.png",
+    apperance: "static/images/ballon_enemy.png",
   };
 
   let enemyTwo = {
@@ -18,7 +18,7 @@ export const initializeEnemies = () => {
       y: 9,
     },
     isDead: false,
-    apperance: "static/images/enemy.png",
+    apperance: "static/images/ballon_enemy.png",
   };
 
   enemies.push(enemyOne, enemyTwo);
