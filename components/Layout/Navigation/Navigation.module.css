@@ -31,7 +31,7 @@
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: #ffff88;
+  color: #d5aff1 ;
 }
 
 @media (min-width: 768px) {

@@ -35,11 +35,11 @@ const Footer = () => (
     </section>
     <section className={styles.FootLegal}>
       <ul>
-        <li>Last Updated: 04.18.2022</li>
+        <li>Last Updated: 02.07.2024</li>
         <li>
           <a href="https://github.com/liamliam2020/portfolio-v2">Github Source Code</a>
         </li>
-        <li>&copy;2022. All Rights Reserved.</li>
+        <li>&copy;{new Date().getFullYear()}. All Rights Reserved.</li>
       </ul>
     </section>
   </footer>

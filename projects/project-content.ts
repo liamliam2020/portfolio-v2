@@ -31,6 +31,8 @@ const PROJECTS = [
     technologies: "C, Make",
     route: "https://github.com/liamliam2020/MemoryAllocator",
   }
+  // Goal is to have 3 really recruiter friendly ones and (sort visualizer, dig dug, and spotify)
+  // then have some really cool ones that engs will like but not visual. Compiler, loadbalancer, ect.
   // {
   //   id: "proj3",
   //   title: "Spotify Music Interpolator",

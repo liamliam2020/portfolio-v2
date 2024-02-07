@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import Hero from "../components/Hero/Hero";
 import Project from "../components/Projects/Project";
 import { getAllProjects } from "../projects/project-content";
+import { Analytics } from "@mui/icons-material";
 
 interface HomePageProps {
   projects: {
@@ -26,6 +27,7 @@ function HomePage(props: HomePageProps) {
       </Head>
       <Hero />
       <Project items={props.projects} />
+      <Analytics />
     </Fragment>
   );
 }
