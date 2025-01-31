@@ -6,7 +6,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 const Hero = () => (
   <div className={styles.Hero}>
     <h2>
-      Hi, I'm Liam a backend software engineer at General Motors! Check out some of 
+      Hi, I'm Liam a fullstack software engineer at Ascensus! Check out some of 
       what I've done.
     </h2>
     <div className={styles.icon}>

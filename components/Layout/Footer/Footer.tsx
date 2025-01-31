@@ -35,7 +35,7 @@ const Footer = () => (
     </section>
     <section className={styles.FootLegal}>
       <ul>
-        <li>Last Updated: 02.07.2024</li>
+        <li>Last Updated: 01.30.2025</li>
         <li>
           <a href="https://github.com/liamliam2020/portfolio-v2">Github Source Code</a>
         </li>
